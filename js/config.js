@@ -139,7 +139,7 @@ try {
 				window.Fit.host_type = 'eu'
 			}
 
-			const data = localStorage.getItem('fit_v3_data_' + window.Fit.salon_id)
+			const data = window._ls.getItem('fit_v3_data_' + window.Fit.salon_id)
 			const storageData = data ? JSON.parse(data) : []
 			if (!!storageData.check_login) window.Fit.check_login = storageData.check_login
 			let isLk = !!document.querySelectorAll(window.Fit.block.userCabinetIndex).length
