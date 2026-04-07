@@ -1660,16 +1660,18 @@ alt='' imgfield='tn_img_1715784503938'
 <style>
 #rec2052257711 .t-slds__arrow_container { display: none !important; }
 #rec2052257711 .t-slds__bullets_wrapper { display: none !important; }
-#rec2052257711 .t-slds__item {
-  position: relative !important;
-  left: 66.66% !important;
-}
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   // Wait for Tilda carousel to initialize, then override SPb section
   setTimeout(function() {
     var spbContainer = document.querySelector('#rec2052257711 .t-card__container');
+      // Position the single card in the rightmost slot (3rd of 3)
+      var spbItem = document.querySelector('#rec2052257711 .t-slds__item');
+      if (spbItem) {
+        var cardWidth = spbItem.offsetWidth;
+        spbItem.style.transform = 'translateX(' + (cardWidth * 2) + 'px)';
+      }
     if (spbContainer) {
       spbContainer.style.cssText += 'transform: none !important;';
       // Move card to right by setting wrapper alignment  
