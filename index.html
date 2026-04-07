@@ -1668,6 +1668,8 @@ alt='' imgfield='tn_img_1715784503938'
 }
 #rec2052257711 .t-slds__item {
   flex-shrink: 0;
+  margin-left: auto !important;
+  margin-right: 0 !important;
 }
 </style>
 <script>
@@ -1678,6 +1680,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (spbContainer) {
       // Remove transform that Tilda's carousel sets
       spbContainer.style.cssText += 'transform: none !important; display: flex !important; justify-content: flex-end !important;';
+      var spbItems = document.querySelectorAll('#rec2052257711 .t-slds__item');
+      spbItems.forEach(function(item) { item.style.marginLeft = 'auto'; item.style.marginRight = '0'; });
       // Also observe for changes since Tilda might re-set the transform
       var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(m) {
@@ -1687,6 +1691,8 @@ document.addEventListener('DOMContentLoaded', function() {
               el.style.transform = 'none';
               el.style.display = 'flex';
               el.style.justifyContent = 'flex-end';
+              var items = document.querySelectorAll('#rec2052257711 .t-slds__item');
+              items.forEach(function(i) { i.style.marginLeft = 'auto'; i.style.marginRight = '0'; });
             }
           }
         });
