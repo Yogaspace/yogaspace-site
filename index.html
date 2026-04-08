@@ -1653,9 +1653,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var spbItem = document.querySelector('#rec2052257711 .t-slds__item');
     if (spbContainer && spbItem) {
       spbContainer.style.setProperty('transform', 'none', 'important');
-      var cardWidth = spbItem.offsetWidth;
-      if (cardWidth > 0) {
-        spbItem.style.setProperty('transform', 'translateX(' + (cardWidth * 2) + 'px)', 'important');
+      // Only shift right on desktop (3 cards per row). On mobile (1 per row) don't shift.
+      if (window.innerWidth > 960) {
+        var cardWidth = spbItem.offsetWidth;
+        if (cardWidth > 0) {
+          spbItem.style.setProperty('transform', 'translateX(' + (cardWidth * 2) + 'px)', 'important');
+        }
+      } else {
+        spbItem.style.setProperty('transform', 'none', 'important');
       }
     }
   }
